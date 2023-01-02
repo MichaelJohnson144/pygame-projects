@@ -9,7 +9,6 @@
     </a>
 </div>
 <br/>
-<p align="center">Michael&apos;s PyGame Projects</p>
 </body>
 
 ---
