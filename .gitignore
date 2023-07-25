@@ -1,0 +1,7 @@
+# testing
+.pytest_cache/
+
+# misc
+.idea
+interp/
+venv/
