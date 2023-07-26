@@ -30,7 +30,7 @@
 
     Py-Man is my second PyGame. It is a project that is still in progress (I.P.).
 
-|               Level 001                |               Level 003                |               Level 005                |
+|               Level 001                |               Level 004                |               Level 005                |
 |:--------------------------------------:|:--------------------------------------:|:--------------------------------------:|
 | ![Py-Man](py_man/images/example_1.png) | ![Py-Man](py_man/images/example_2.png) | ![Py-Man](py_man/images/example_3.png) |
 
