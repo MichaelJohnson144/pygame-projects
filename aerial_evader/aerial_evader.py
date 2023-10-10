@@ -1,7 +1,16 @@
 import random
 
 import pygame
-from pygame.locals import K_UP, K_RIGHT, K_DOWN, K_LEFT, KEYDOWN, K_RETURN, K_ESCAPE, QUIT
+from pygame.locals import (
+    K_UP,
+    K_RIGHT,
+    K_DOWN,
+    K_LEFT,
+    KEYDOWN,
+    K_RETURN,
+    K_ESCAPE,
+    QUIT,
+)
 
 pygame.init()
 pygame.display.set_caption("Aerial Evader")
@@ -172,7 +181,9 @@ class Game:
             self.start_button.render()
 
     def update_background(self):
-        self.background_surface_position = (self.background_surface_position - 20) % -800
+        self.background_surface_position = (
+            self.background_surface_position - 20
+        ) % -800
 
     def update_sprites(self):
         pressed_keys = pygame.key.get_pressed()
@@ -194,7 +205,8 @@ class Game:
             self.update_background()
             self.update_sprites()
             pygame.display.flip()
-            # 30 fps is recommended; however, if you desire a challenge, then leave it set to 60:
+            # Thirty fps is recommended; however,
+            # if you desire a challenge, then leave it set to 60:
             pygame.time.Clock().tick(60)
         pygame.quit()
 

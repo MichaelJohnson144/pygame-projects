@@ -11,7 +11,9 @@ class Pellet(object):
         self.name = Character().PELLET
         self.display = Display()
         self.visibility = True
-        self.position = Vector2(j * self.display.TILE_WIDTH, i * self.display.TILE_HEIGHT)
+        self.position = Vector2(
+            j * self.display.TILE_WIDTH, i * self.display.TILE_HEIGHT
+        )
         self.pellet_radius = int(2 * self.display.TILE_WIDTH / 16)
         self.collision_radius = 2 * self.display.TILE_WIDTH / 16
         self.points = 10
@@ -23,7 +25,10 @@ class Pellet(object):
         adjusted_pellet_position = tile_size / 2
         pellet_position = self.position + adjusted_pellet_position
         pygame.draw.circle(
-            screen, "#DEA185", tuple(int(x) for x in pellet_position), self.pellet_radius
+            screen,
+            "#DEA185",
+            tuple(int(x) for x in pellet_position),
+            self.pellet_radius,
         )
 
 

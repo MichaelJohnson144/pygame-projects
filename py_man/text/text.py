@@ -1,8 +1,8 @@
 import pygame
 from pygame import Vector2
 
-from py_man.utils.enums.display.font.font_family import FontFamily
 from py_man.utils.enums.display.display import Display
+from py_man.utils.enums.display.font.font_family import FontFamily
 from py_man.utils.enums.display.state.executing.executing import Executing
 
 

@@ -82,9 +82,9 @@ class NodeGroup(object):
                         self.node_dictionary[spawn_point_key].neighbors[
                             self.joypad.RIGHT
                         ] = self.node_dictionary[key]
-                        self.node_dictionary[key].neighbors[self.joypad.LEFT] = (
-                            self.node_dictionary[spawn_point_key]
-                        )
+                        self.node_dictionary[key].neighbors[
+                            self.joypad.LEFT
+                        ] = self.node_dictionary[spawn_point_key]
                     spawn_point_key = key
                 elif value not in self.path_symbols_array:
                     spawn_point_key = None
@@ -100,9 +100,9 @@ class NodeGroup(object):
                         self.node_dictionary[spawn_point_key].neighbors[
                             self.joypad.DOWN
                         ] = self.node_dictionary[key]
-                        self.node_dictionary[key].neighbors[self.joypad.UP] = (
-                            self.node_dictionary[spawn_point_key]
-                        )
+                        self.node_dictionary[key].neighbors[
+                            self.joypad.UP
+                        ] = self.node_dictionary[spawn_point_key]
                     spawn_point_key = key
                 elif value not in self.path_symbols_array:
                     spawn_point_key = None
@@ -115,12 +115,12 @@ class NodeGroup(object):
         spawn_point_key, neighbouring_node_key = [
             self.calculate_node_key(*portal) for portal in (first_portal, second_portal)
         ]
-        self.node_dictionary[spawn_point_key].neighbors[self.joypad.PORTAL] = (
-            self.node_dictionary[neighbouring_node_key]
-        )
-        self.node_dictionary[neighbouring_node_key].neighbors[self.joypad.PORTAL] = (
-            self.node_dictionary[spawn_point_key]
-        )
+        self.node_dictionary[spawn_point_key].neighbors[
+            self.joypad.PORTAL
+        ] = self.node_dictionary[neighbouring_node_key]
+        self.node_dictionary[neighbouring_node_key].neighbors[
+            self.joypad.PORTAL
+        ] = self.node_dictionary[spawn_point_key]
 
     def generate_spawn_point_layout(self, x_offset, y_offset):
         spawn_point_node_array = np.array(
@@ -138,10 +138,12 @@ class NodeGroup(object):
         self.spawn_point_key = self.calculate_node_key(x_offset + 2, y_offset)
         return self.spawn_point_key
 
-    def link_spawn_point_layout(self, spawn_point_key, neighbouring_node_key, direction):
-        self.node_dictionary[spawn_point_key].neighbors[direction] = (
-            self.retrieve_from_tile_coordinates(*neighbouring_node_key)
-        )
+    def link_spawn_point_layout(
+        self, spawn_point_key, neighbouring_node_key, direction
+    ):
+        self.node_dictionary[spawn_point_key].neighbors[
+            direction
+        ] = self.retrieve_from_tile_coordinates(*neighbouring_node_key)
         self.node_dictionary[self.calculate_node_key(*neighbouring_node_key)].neighbors[
             direction * -1
         ] = self.node_dictionary[spawn_point_key]

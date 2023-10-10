@@ -1,12 +1,12 @@
 from pygame.math import Vector2
 
+from py_man.assets.sprites.sprites import GhostSprites
 from py_man.entity.entity import Entity
 from py_man.state.states import StateController
+from py_man.utils.enums.direction.joypad.joypad import JoyPad
 from py_man.utils.enums.direction.state.ghost_state.ghost_state import GhostState
 from py_man.utils.enums.display.character.character import Character
 from py_man.utils.enums.display.display import Display
-from py_man.utils.enums.direction.joypad.joypad import JoyPad
-from py_man.assets.sprites.sprites import GhostSprites
 
 
 class Ghost(Entity):

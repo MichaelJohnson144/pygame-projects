@@ -1,21 +1,21 @@
 import pygame
 from pygame.locals import KEYDOWN, K_RETURN, K_ESCAPE, QUIT
 
-from utils.enums.display.display import Display
-from utils.enums.direction.joypad.joypad import JoyPad
-from py_man.pause.pause import Pause
-from text.text import TextGroup
-from py_man.assets.sprites.sprites import LifeSprites
 from maze_data.maze_data import MazeData
-from utils.enums.display.state.executing.executing import Executing
-from py_man.assets.sprites.sprites import MazeSprites
 from nodes.nodes import NodeGroup
-from py_man.assets.sprites.characters.py_man import PyMan
 from pellets.pellets import PelletGroup
 from py_man.assets.sprites.characters.ghosts import GhostGroup
-from utils.enums.display.character.character import Character
-from py_man.utils.enums.direction.state.ghost_state.ghost_state import GhostState
+from py_man.assets.sprites.characters.py_man import PyMan
 from py_man.assets.sprites.fruit.fruit import Fruit
+from py_man.assets.sprites.sprites import LifeSprites
+from py_man.assets.sprites.sprites import MazeSprites
+from py_man.pause.pause import Pause
+from py_man.utils.enums.direction.state.ghost_state.ghost_state import GhostState
+from text.text import TextGroup
+from utils.enums.direction.joypad.joypad import JoyPad
+from utils.enums.display.character.character import Character
+from utils.enums.display.display import Display
+from utils.enums.display.state.executing.executing import Executing
 
 
 class EventHandlers(object):
@@ -392,7 +392,7 @@ class GhostEvents(ExecutionEvents):
     def handle_reset_level(self):
         self.pause.set_pause(pause_time=3, function=self.reset_level)
 
-    def handle_live_ghost(self, ghost):
+    def handle_live_ghost(self, _):
         self.lives -= 1
         self.life_sprites.remove_sprite()
         self.py_man.died()

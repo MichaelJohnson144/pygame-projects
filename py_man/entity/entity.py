@@ -3,8 +3,8 @@ from random import randint
 import pygame
 from pygame.math import Vector2
 
-from py_man.utils.enums.display.display import Display
 from py_man.utils.enums.direction.joypad.joypad import JoyPad
+from py_man.utils.enums.display.display import Display
 
 
 class Entity(object):

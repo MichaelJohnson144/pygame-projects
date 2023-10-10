@@ -1,10 +1,10 @@
 import pygame
 from pygame.locals import K_UP, K_RIGHT, K_DOWN, K_LEFT
 
-from py_man.entity.entity import Entity
-from py_man.utils.enums.display.character.character import Character
-from py_man.utils.enums.direction.joypad.joypad import JoyPad
 from py_man.assets.sprites.sprites import PyManSprites
+from py_man.entity.entity import Entity
+from py_man.utils.enums.direction.joypad.joypad import JoyPad
+from py_man.utils.enums.display.character.character import Character
 
 
 class PyMan(Entity):

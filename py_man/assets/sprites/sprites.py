@@ -1,11 +1,11 @@
 import numpy as np
 import pygame
 
-from py_man.utils.enums.display.display import Display
-from py_man.utils.enums.direction.joypad.joypad import JoyPad
-from py_man.utils.enums.display.character.character import Character
 from py_man.animation.animation import Animation
+from py_man.utils.enums.direction.joypad.joypad import JoyPad
 from py_man.utils.enums.direction.state.ghost_state.ghost_state import GhostState
+from py_man.utils.enums.display.character.character import Character
+from py_man.utils.enums.display.display import Display
 
 
 class SpriteSheet(object):
@@ -129,7 +129,7 @@ class GhostSprites(SpriteSheet):
     def return_initial_sprite(self):
         return self.get_sprite(self.x[self.ghost.name], 4, width=self, height=self)
 
-    def update(self, dt):
+    def update(self, _):
         x = self.x[self.ghost.name]
         mode = self.ghost.state_controller.current
         sprites = {
